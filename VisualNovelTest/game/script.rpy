@@ -1,40 +1,10 @@
-﻿# The script of the game goes in this file.
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-#define e = Character("Eileen")
-
-
-# The game starts here.
-
-#label start:
-
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-
-    #scene bg room
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-    #show eileen happy
-
-    # These display lines of dialogue.
-
-    #e "You've created a new Ren'Py game."
-
-    #e "Once you add a story, pictures, and music, you can release it to the world!"
-
-    # This ends the game.
-
-    #return
-label start:
-    scene bg_cenario1
+﻿label start:
+    scene bg-1
 
     "Bem-vindo a 'Cosmic Journey', uma história de exploração e descoberta espacial."
+
+    show character-1
+
     "Você é um astronauta solitário, flutuando no espaço sideral."
     "A comunicação com a Terra é interrompida, e você está sozinho na vastidão do universo."
 
@@ -45,9 +15,12 @@ label start:
             jump refletir_vida_terra
 
 label explorar_espaco:
-    scene bg_cenario2
+    scene bg-1
 
     "Você decide explorar o espaço e se aventurar além dos limites conhecidos."
+
+    hide character-1
+
     "Enquanto viaja pela galáxia, você encontra um planeta misterioso."
 
     menu:
@@ -57,7 +30,9 @@ label explorar_espaco:
             jump continuar_jornada
 
 label refletir_vida_terra:
-    scene bg_cenario3
+    scene bg-1
+
+    show character-1
 
     "Enquanto flutua no espaço, você reflete sobre a vida na Terra e as conexões que deixou para trás."
     "Memórias e emoções enchem sua mente."
@@ -69,9 +44,18 @@ label refletir_vida_terra:
             jump encontrar_significado
 
 label pousar_planeta:
-    scene bg_cenario4
+    scene bg-2
+
+    show character-1
 
     "Você decide pousar no planeta desconhecido."
+
+    hide character-1
+
+    scene bg-3
+
+    show aliens-1
+
     "Ao explorar sua superfície, você descobre criaturas alienígenas amigáveis e paisagens deslumbrantes."
 
     menu:
@@ -80,6 +64,8 @@ label pousar_planeta:
         "Prosseguir com a exploração":
             jump prosseguir_exploracao
 
+                                                            # GERAR IMAGENS #
+                                                            
 label continuar_jornada:
     scene bg_cenario5
 
@@ -179,6 +165,8 @@ label buscar_respostas_cosmicas:
 
     jump final_busca_conhecimento
 
+                                                            # POSSIVEIS FINAIS #
+
 label final_amizade:
     scene bg_cenario16
 
@@ -209,3 +197,32 @@ label final_tragico:
 
     return
 
+label final_reencontro:
+    scene bg_cenario19
+
+    "Ao retornar à Terra, você é recebido de braços abertos por entes queridos."
+    "As emoções transbordam em um reencontro emocionante, onde você compartilha suas experiências cósmicas."
+
+    "Fim."
+
+    return
+
+label final_paz_interior:
+    scene bg_cenario20
+
+    "Na solidão do espaço, você encontra a paz interior e aceita a grandiosidade do universo."
+    "O silêncio cósmico se torna uma sinfonia transcendental, preenchendo sua alma de tranquilidade."
+
+    "Fim."
+
+    return
+
+label final_busca_conhecimento:
+    scene bg_cenario21
+
+    "Sua busca incessante por respostas cósmicas o leva a novas descobertas e avanços científicos."
+    "Você se torna um símbolo da busca pelo conhecimento e sua missão de desvendar os segredos do universo continua."
+
+    "Fim."
+
+    return

@@ -1,0 +1,24 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 39, in script
+    show character at (100,200)
+TypeError: 'tuple' object is not callable
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 39, in script
+    show character at (100,200)
+  File "C:\Users\User\Desktop\RenPy\renpy-8.1.1-sdk\renpy\ast.py", line 1428, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "C:\Users\User\Desktop\RenPy\renpy-8.1.1-sdk\renpy\ast.py", line 1391, in show_imspec
+    renpy.config.show(name,
+  File "C:\Users\User\Desktop\RenPy\renpy-8.1.1-sdk\renpy\exports.py", line 745, in show
+    img = i(img) # type: ignore
+TypeError: 'tuple' object is not callable
+
+Windows-10-10.0.19041 AMD64
+Ren'Py 8.1.1.23060707
+VisualNovelTest 1.0
+Tue Jul 11 07:01:38 2023
